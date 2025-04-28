@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Editing | Heather Rose</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <div class="container">
@@ -29,9 +30,14 @@
       <img src="placeholder.jpg" alt="Placeholder audio sample" style="width:100%;max-width:400px;margin-top:1rem;">
     </section>
   </main>
-  <footer>
-    <p>&copy; 2025 Heather Rose Sackrison</p>
-  </footer>
-  </div>
+  <div id="footer"></div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+</script>
 </body>
 </html>
