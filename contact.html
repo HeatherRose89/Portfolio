@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Heather Rose</title>
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <div class="container">
+<header>
+    <h1>Contact Me</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="editing.html">Editing</a></li>
+        <li><a href="narration.html">Narration</a></li>
+        <li><a href="social.html">Social Strategy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="contact-form">
+      <h2>Let's Connect</h2>
+      <form action="https://formspree.io/f/xdkgkdde" method="POST" id="contact-form">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="_replyto" required>
+
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" rows="5" required></textarea>
+
+  <input type="submit" value="Send">
+</form>
+
+<p id="thank-you" style="display:none; text-align: center; color: #0b3d3a; font-weight: bold; margin-top: 2rem; font-family: 'Great Vibes', cursive; font-size: 2rem; position: relative;">
+  ✨ Thank you for reaching out! I'll get back to you soon ✨
+</p>
+
+<style>
+@keyframes sparkleEffect {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+#thank-you.show {
+  animation: sparkleEffect 2s ease-in-out 0s 2;
+  text-shadow: 0 0 8px #d4af37, 0 0 12px #d4af37;
+}
+    form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+    form input,
+form textarea,
+form button {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--light-gold);
+  border-radius: 8px;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+}
+    form label {
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+  font-family: var(--font-serif);
+  color: var(--green);
+}
+    form input[type="submit"] {
+  margin-bottom: 2rem; /* bigger gap below the button */
+}
+    .social-links {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+</style>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const thankYou = document.getElementById('thank-you');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.reset();
+        thankYou.style.display = 'block';
+        thankYou.classList.add('show');
+      } else {
+        alert('There was a problem submitting your form. Please try again.');
+      }
+    });
+  });
+</script>
+      <div class="social-links">
+  <p>Or reach out on social media:</p>
+  <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+  <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+  <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+</div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Heather Rose Sackrison</p>
+  </footer>
+  </div>
+</body>
+</html>

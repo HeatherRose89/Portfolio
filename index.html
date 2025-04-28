@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heather Rose | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.grid-item {
+  flex: 0 1 calc(45% - 1rem); /* about 2 items per row with gap */
+  max-width: 400px;
+  height: 250px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #d4af37;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: rgba(11, 61, 58, 0.7);
+  color: #f5e1a4;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  transition: all 0.5s ease;
+}
+
+.grid-item:hover .overlay {
+  height: 100%;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Heather Rose Sackrison</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="editing.html">Editing</a></li>
+          <li><a href="narration.html">Narration</a></li>
+          <li><a href="social.html">Social Strategy</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="intro">
+        <h2>Welcome</h2>
+        <p>I'm Heather Rose Sackrison, a podcast and audiobook editor, narrator, and content strategist. I specialize in creating immersive audio experiences and building dynamic online communities. Whether you're launching your first podcast or refining your audiobook narration, I'm here to elevate your vision.</p>
+      </section>
+      
+      <section class="image-grid">
+        <a href="about.html" class="grid-item" style="background-image: url('about me.jpg');">
+          <div class="overlay">About Me</div>
+        </a>
+        <a href="editing.html" class="grid-item" style="background-image: url('Editing Magic.jpg');">
+          <div class="overlay">Editing Magic</div>
+        </a>
+        <a href="narration.html" class="grid-item" style="background-image: url('Narration Journey.jpg');">
+          <div class="overlay">Narration Journey</div>
+        </a>
+        <a href="social.html" class="grid-item" style="background-image: url('Social Strategy.jpg');">
+          <div class="overlay">Social Strategy</div>
+        </a>
+        <a href="contact.html" class="grid-item" style="background-image: url('Get in Touch.jpg');">
+          <div class="overlay">Get in Touch</div>
+        </a>
+      </section>
+    </main>
+    <div id="footer"></div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+</script>
+</body>
+</html>

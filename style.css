@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap');
+:root {
+  --green: #0b3d3a;
+  --gold: #d4af37;
+  --light-gold: #f5e1a4;
+  --white: #ffffff;
+  --text-dark: #333;
+  --font-script: 'Great Vibes', cursive;
+  --font-serif: 'Playfair Display', serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-serif);
+  background-color: var(--white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+.container {
+  width: 100%;
+  max-width: 900px;
+  background-color: var(--white);
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  border: 1px solid var(--light-gold);
+}
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 1rem;
+}
+header h1 {
+  font-family: var(--font-script);
+  font-size: 3rem;
+  color: var(--green);
+}
+nav ul {
+  list-style: none;
+  margin-top: 0.5rem;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+nav a {
+  color: var(--green);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+nav a:hover {
+  color: var(--gold);
+}
+main {
+  padding: 2rem 0;
+}
+h2 {
+  font-family: var(--font-script);
+  font-size: 2.5rem;
+  color: var(--green);
+  margin-bottom: 1rem;
+}
+p, li {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid var(--light-gold);
+  font-size: 0.9rem;
+  color: var(--green);
+  margin-top: 2rem;
+}
